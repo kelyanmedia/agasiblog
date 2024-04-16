@@ -1,0 +1,106 @@
+//====================================================================================================
+
+.footer {
+  @include adaptiveValue("padding-top", 50, 30);
+  @include adaptiveValue("padding-bottom", 50, 30);
+  border-radius: 20px 20px 0 0;
+  background-color: #000;
+
+  &_white {
+    background-color: #fff;
+  }
+
+  &__container {
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiveValue("gap", 30, 20);
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 45, 24);
+    line-height: 110%;
+    color: #fff;
+
+    max-width: toRem(560);
+
+    span {
+      color: #2051f4;
+    }
+
+    .footer_white & {
+      color: #333;
+    }
+  }
+
+  &__lists {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: 130%;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(20);
+
+    @media (min-width: $mobile) {
+      text-align: right;
+    }
+
+    .footer_white & {
+      color: #333;
+    }
+  }
+
+  &__list-title {
+    margin-bottom: toRem(20);
+    opacity: 0.5;
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__link {
+    position: relative;
+    transition: all 0.3s ease 0s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      transition: all 0.3s ease 0s;
+
+      .footer_white & {
+        background-color: #333;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #2051f4;
+        &::before {
+          background-color: #2051f4;
+        }
+      }
+    }
+  }
+}
+
+//====================================================================================================

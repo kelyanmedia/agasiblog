@@ -1,0 +1,35 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+//========================================================================================================================================================
+
+// .fancybox__container {
+//     max-width: none;
+// }
+
+//========================================================================================================================================================
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: toRem(10);
+  &__button {
+    width: toRem(40);
+    height: toRem(40);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2051f4;
+
+    font-size: toRem(20);
+    color: #2051f4;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #fff;
+        background-color: #2051f4;
+      }
+    }
+  }
+}
