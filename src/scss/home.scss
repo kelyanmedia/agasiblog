@@ -462,18 +462,24 @@
   &__num {
     font-family: "Neue Machina";
     font-weight: 300;
-    @include adaptiveValue("font-size", 60, 40);
+
     line-height: 100%;
     color: #2051f4;
     white-space: nowrap;
     margin-bottom: toRem(15);
+
+    @media (min-width: $pc) {
+      @include adaptiveValue("font-size", 60, 40);
+    }
     @media (max-width: $pc) {
       font-size: toRem(100);
       margin-bottom: toRem(0);
     }
 
     sup {
-      @include adaptiveValue("font-size", 30, 20);
+      @media (min-width: $pc) {
+        @include adaptiveValue("font-size", 30, 20);
+      }
       @media (max-width: $pc) {
         font-size: toRem(60);
       }
